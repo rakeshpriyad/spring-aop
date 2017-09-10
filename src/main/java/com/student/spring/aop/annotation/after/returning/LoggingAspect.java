@@ -4,30 +4,13 @@ import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 
 @Aspect
 public class LoggingAspect {
 
-	@Before("execution(* com.student.spring.aop.annotation.after.returning.CustomerBo.addCustomer(..))")
-	public void logBefore(JoinPoint joinPoint) {
-
-		System.out.println("logBefore() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
-		System.out.println("******");
-	}
-
-	@After("execution(* com.student.spring.aop.annotation.after.returning.CustomerBo.addCustomer(..))")
-	public void logAfter(JoinPoint joinPoint) {
-
-		System.out.println("logAfter() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
-		System.out.println("******");
-
-	}
+	
 	
 	@AfterReturning(
 		      pointcut = "execution(* com.student.spring.aop.annotation.after.returning.addCustomerReturnValue(..))",

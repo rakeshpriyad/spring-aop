@@ -10,7 +10,7 @@ public class AOPAfterReturningDemo {
 
 		CustomerBo cbo = (CustomerBo) context.getBean("customerBo");
 		System.out.println(cbo);
-		cbo.addCustomer();
+		cbo.addCustomerReturnValue();
 		context.close();
 	}
 }
